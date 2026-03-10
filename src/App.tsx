@@ -1,7 +1,11 @@
+import WhatsAppRegister from "./panel/AuthPanel/Register";
+
 function App() {
   return (
     <div>
-      <span>Whatsapp</span>
+      <span>
+        <WhatsAppRegister />
+      </span>
     </div>
   );
 }
