@@ -1,6 +1,6 @@
 import axios from "axios";
+import { useAuthStore } from "./features/useAuthStore";
 import { baseURL } from "./apiEndPoints";
-import { useAuthStore } from "../store/features/useAuthStore";
 
 export const axiosInstance = axios.create({
   baseURL,
