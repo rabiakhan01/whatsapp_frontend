@@ -2,10 +2,11 @@ import React from "react";
 
 // Register User Type
 export interface RegisterUserTypes {
-  fullName: string;
+  name: string;
   email: string;
   status: string;
   password: string;
+  picture?: File | null;
 }
 
 // Input Types

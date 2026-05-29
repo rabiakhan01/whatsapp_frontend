@@ -1,7 +1,7 @@
 import * as Yup from "yup";
 
 export const signupSchema = Yup.object({
-    fullName: Yup.string().required("Full Name is required").min(6, "The name should be between 6 to 12 character").max(12, "The name should be between 6 to 12 character"),
+    name: Yup.string().required("Name is required").min(6, "The name should be between 6 to 12 character").max(12, "The name should be between 6 to 12 character"),
     email: Yup.string().required("Email is required").email("Invalid Email Address"),
     status: Yup.string().required("Status is required").max(64, "Status must be less than 64 characters"),
     password: Yup.string().required("Password is required").matches(

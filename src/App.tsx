@@ -1,6 +1,7 @@
 import { Routes, Route, BrowserRouter } from "react-router-dom";
 import Register from "./pages/Register";
 import Login from "./pages/Login";
+import { Toast } from "./components/shared";
 
 function App() {
   return (
@@ -10,6 +11,7 @@ function App() {
         <Route path="/register" element={<Register />} />
         <Route path="/login" element={<Login />} />
       </Routes>
+      <Toast />
     </BrowserRouter>
   );
 }
