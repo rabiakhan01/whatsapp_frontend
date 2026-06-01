@@ -1,5 +1,10 @@
 import * as Yup from "yup";
 
+export const loginSchema = Yup.object({
+    email: Yup.string().required("Email is required").email("Invalid Email Address"),
+    password: Yup.string().required("Password is required"),
+});
+
 export const signupSchema = Yup.object({
     name: Yup.string().required("Name is required").min(6, "The name should be between 6 to 12 character").max(12, "The name should be between 6 to 12 character"),
     email: Yup.string().required("Email is required").email("Invalid Email Address"),

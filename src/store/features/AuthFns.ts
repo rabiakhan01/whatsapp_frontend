@@ -1,7 +1,24 @@
 import axios from "axios";
-import type { RegisterUserTypes } from "../../utils/types";
+import type { LoginUserTypes, RegisterUserTypes } from "../../utils/types";
 import { endPoints } from "../apiEndPoints";
 import { axiosInstance } from "../http";
+
+export const loginUserAPIFn = async (payload: LoginUserTypes) => {
+    try {
+        const response = await axiosInstance.post(endPoints?.login, payload);
+        return {
+            data: response?.data,
+            status: "success",
+        };
+    } catch (error) {
+        const errorMsg = axios.isAxiosError(error) ? error.response?.data : error;
+        return {
+            data: null,
+            status: "fail",
+            error: errorMsg?.error?.message ?? "Something went wrong",
+        };
+    }
+};
 
 export const registerUserAPIFn = async (payload: RegisterUserTypes) => {
     try {

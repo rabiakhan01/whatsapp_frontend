@@ -9,6 +9,12 @@ export interface RegisterUserTypes {
   picture?: File | null;
 }
 
+// Login User Type
+export interface LoginUserTypes {
+  email: string;
+  password: string;
+}
+
 // Input Types
 export type AuthInputProps =
   React.InputHTMLAttributes<HTMLInputElement> & {

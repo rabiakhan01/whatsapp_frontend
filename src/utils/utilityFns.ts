@@ -37,3 +37,4 @@ export const showToast = (message: string, type: toastTypes = "info", options: T
             break;
     }
 };
+
