@@ -4,8 +4,13 @@ import { loginUserAPIFn, registerUserAPIFn } from "./AuthFns";
 import type { LoginUserTypes, RegisterUserTypes } from "../../utils/types";
 import { showToast } from "../../utils/utilityFns";
 
-type AuthState = {
-  currentUser: null | unknown;
+interface CurrentUser {
+  access_token: string | null,
+  message: string,
+  user: Record<string, unknown>
+}
+interface AuthState {
+  currentUser: null | CurrentUser;
   loading?: boolean;
   status?: string | null;
   error?: string | null;
